@@ -7,17 +7,17 @@ const CategoryService = {
     getAll: async function(){
         return Categories.find({},{restaurants: 0});
     },
-    getRestaurants: async function (isTrending, isTop5){
-        console.log(isTrending)
-        console.log(isTop5)
-        if (isTrending) {
-            var res = await Categories.find({isTrending: true})
-            return ;
+    getRestaurants: async function (isTrending, numOfTop, topNearYou){
+        if (isTrending != undefined && isTrending == "true") {
+            return await Categories.aggregate([{$unwind:"$restaurants"},{$match: {"restaurants.isTrending": true}}])
         }
-        if (isTop5) {
-            return await Categories.aggregate([{$sort: {rate: 1}}])
+        if (numOfTop) {
+            return await Categories.aggregate([{$unwind:"$restaurants"},{$sort: {"restaurants.rate": 1}}]).limit(Number(numOfTop))
         }
-      return await Categories.aggregate([{$unwind:"$restaurants"}]);
+        if (topNearYou) {
+            return await Categories.aggregate([{$unwind:"$restaurants"},{$sort: {"restaurants.distance": 1}}]).limit(Number(topNearYou))
+        }
+        return await Categories.aggregate([{$unwind:"$restaurants"}]);
     }
 }
 export default CategoryService;

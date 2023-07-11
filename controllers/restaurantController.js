@@ -13,7 +13,7 @@ const RestaurantController = {
     },
     getAllCategories: async function(req, res, next){
         try {
-            const result = await CategoryService.getAll(isTrending, isTop5);
+            const result = await CategoryService.getAll();
             return res.json(result);
         } catch (error) {
             next(error);
@@ -21,8 +21,8 @@ const RestaurantController = {
     },
     getProducts: async function(req, res, next){
         try {
-            const {isTrending, isTop5} = req.query
-            const result = await CategoryService.getRestaurants(isTrending, isTop5);
+            const {isTrending, numOfTop, topNearYou} = req.query
+            const result = await CategoryService.getRestaurants(isTrending, numOfTop, topNearYou);
             return res.json(result);
         } catch (error) {
             next(error);
