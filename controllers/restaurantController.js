@@ -13,8 +13,18 @@ const RestaurantController = {
     },
     getAllCategories: async function(req, res, next){
         try {
-            const result = await CategoryService.getAll();
+            const {withRestaurant} = req.query;
+            let result = await CategoryService.getAll(withRestaurant);
             return res.json(result);
+        } catch (error) {
+            next(error);
+        }
+    },
+    addRestaurant: async function(req, res, next){
+        try {
+            const {categoryId} = req.params;
+            const result = await RestaurantService.addRestaurant(categoryId, req.body);
+            return res.json({success: true, data: result});
         } catch (error) {
             next(error);
         }
@@ -23,6 +33,15 @@ const RestaurantController = {
         try {
             const {isTrending, numOfTop, topNearYou} = req.query
             const result = await CategoryService.getRestaurants(isTrending, numOfTop, topNearYou);
+            return res.json(result);
+        } catch (error) {
+            next(error);
+        }
+    },
+    addDish: async function(req, res, next){
+        try {
+            const {categoryId, restaurantId} = req.params;
+            const result = await DishService.addDish(categoryId,restaurantId, req.body);
             return res.json(result);
         } catch (error) {
             next(error);

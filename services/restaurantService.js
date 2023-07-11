@@ -1,14 +1,8 @@
 import Category from "../models/category.js";
 
 const RestaurantService = {
-    addProduct: async function(categoryId, product){
-        return Category.updateOne({_id: categoryId}, {$push: {restaurants: product}});
+    addRestaurant: async function(categoryId, restaurant){
+        return await Category.updateOne({_id: categoryId}, {$push: {restaurants: restaurant}});
     }
-
-    // getAll: async function() {
-    //     // return Category.find({})
-    // },
-    // getAllByCategory: async function(categoryId){}
-
 }
 export default RestaurantService;

@@ -4,8 +4,11 @@ const CategoryService = {
     addCategory: async function(category){
         return await Categories.create(category);
     },
-    getAll: async function(){
-        return Categories.find({},{restaurants: 0});
+    getAll: async function(withRestaurant){
+        if (withRestaurant != undefined && withRestaurant == "true") {
+            return await Categories.find({});
+        }
+        return await Categories.find({},{restaurants: 0});
     },
     getRestaurants: async function (isTrending, numOfTop, topNearYou){
         if (isTrending != undefined && isTrending == "true") {
