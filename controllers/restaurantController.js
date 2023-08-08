@@ -46,7 +46,27 @@ const RestaurantController = {
         } catch (error) {
             next(error);
         }
-    }
+    },
+    setFavouriteRestaurant: async function(req, res, next){
+        try {
+            const {categoryId, restaurantId} = req.params;
+            const { isFavourite } = req.query
+            const result = await RestaurantService.setFavouriteRestaurant(categoryId,restaurantId, isFavourite);
+            return res.json(result);
+        } catch (error) {
+            next(error);
+        }
+    },
+    setFavouriteDish: async function(req, res, next){
+        try {
+            const {categoryId, restaurantId, dishId} = req.params;
+            const { isFavourite } = req.query
+            const result = await DishService.setFavouriteDish(categoryId,restaurantId, dishId, isFavourite);
+            return res.json(result);
+        } catch (error) {
+            next(error);
+        }
+    },
 
 }
 

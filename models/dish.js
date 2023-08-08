@@ -7,6 +7,7 @@ const Dishes = mongoose.Schema({
     rate: Number,
     price: Number,
     image: String,
+    isFavourite: Boolean,
 });
 
 export default Dishes;

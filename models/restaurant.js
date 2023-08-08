@@ -14,7 +14,8 @@ const Restaurants = mongoose.Schema ({
     timeOpen: String,
     dayOfWeek: String,
     image: String,
-    isTrending: Boolean
+    isTrending: Boolean,
+    isFavourite: Boolean,
 }, {
     timestamps: true
 })
