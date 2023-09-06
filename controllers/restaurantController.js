@@ -52,7 +52,12 @@ const RestaurantController = {
             const {categoryId, restaurantId} = req.params;
             const { isFavourite } = req.query
             const result = await RestaurantService.setFavouriteRestaurant(categoryId,restaurantId, isFavourite);
-            return res.json(result);
+            if (result.modifiedCount > 0) {
+                return res.json({success: true})
+            }
+            else {
+                return res.json({success: false})
+            }
         } catch (error) {
             next(error);
         }
