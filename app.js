@@ -9,7 +9,7 @@ import UserRouter from "./routers/userRouter.js";
 const app = express();
 
 await mongoose.connect(`mongodb://localhost:27017/NearRestaurant`);
-// await mongoose.connect(`mongodb+srv://admin:admin@cluster0.flg58zz.mongodb.net/`);
+// await mongoose.connect(`mongodb+srv://admin:admin@cluster0.flg58zz.mongodb.net/near-restaurant`);
 console.log("DB connected successfully!");
 
 app.use(cors());
