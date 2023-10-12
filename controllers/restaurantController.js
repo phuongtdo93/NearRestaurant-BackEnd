@@ -29,6 +29,15 @@ const RestaurantController = {
             next(error);
         }
     },
+    getRestaurantByCategoryId: async function(req, res, next){
+        try {
+            const {categoryId} = req.params;
+            const result = await RestaurantService.getRestaurantByCategoryId(categoryId);
+            return res.json({success: true, data: result});
+        } catch (error) {
+            next(error);
+        }
+    },
     getProducts: async function(req, res, next){
         try {
             const {isTrending, numOfTop, topNearYou} = req.query

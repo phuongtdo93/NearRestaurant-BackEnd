@@ -11,6 +11,11 @@ const RestaurantService = {
             { $set: { 'restaurants.$.isFavourite': isFavourite } },
         );
     },
+    getRestaurantByCategoryId: async function (categoryId) {
+        return await Category.find(
+            { _id: categoryId }
+        );
+    },
     getRestaurantById: async function (categoryId, restaurantId) {
         let result = await Category.find({'_id': categoryId, "restaurants": {$elemMatch: {"_id": restaurantId}}})
         return result

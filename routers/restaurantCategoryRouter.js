@@ -4,6 +4,7 @@ import DishCategoryRouter from "./dishCategoryRouter.js";
 
 const router = Router({mergeParams: true});
 router.post("", RestaurantController.addRestaurant);
+router.get("", RestaurantController.getRestaurantByCategoryId);
 router.patch("/:restaurantId", RestaurantController.setFavouriteRestaurant);
 router.get("/:restaurantId/images", RestaurantController.getRestaurantImages)
 
