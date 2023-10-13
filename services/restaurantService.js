@@ -1,4 +1,5 @@
 import Category from "../models/category.js";
+import {ObjectId} from "mongodb";
 
 const RestaurantService = {
     addRestaurant: async function(categoryId, restaurant){
@@ -12,8 +13,11 @@ const RestaurantService = {
         );
     },
     getRestaurantByCategoryId: async function (categoryId) {
-        return await Category.find(
-            { _id: categoryId }
+        console.log(categoryId)
+        return await Category.aggregate([
+            {$match: { _id: new ObjectId(categoryId)} },
+            {$unwind: "$restaurants"}
+            ]
         );
     },
     getRestaurantById: async function (categoryId, restaurantId) {
