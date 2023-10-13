@@ -13,7 +13,6 @@ const RestaurantService = {
         );
     },
     getRestaurantByCategoryId: async function (categoryId) {
-        console.log(categoryId)
         return await Category.aggregate([
             {$match: { _id: new ObjectId(categoryId)} },
             {$unwind: "$restaurants"}

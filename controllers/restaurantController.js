@@ -33,7 +33,7 @@ const RestaurantController = {
         try {
             const {categoryId} = req.params;
             const result = await RestaurantService.getRestaurantByCategoryId(categoryId);
-            return res.json({success: true, data: result});
+            return res.json(result);
         } catch (error) {
             next(error);
         }
