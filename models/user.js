@@ -6,7 +6,10 @@ const Users = mongoose.Schema({
     id: mongoose.Types.ObjectId,
     email: String,
     password: String,
-    reservation: [Reservations]
+    reservations: [Reservations],
+    favouriteRestaurants: [String], //The list of restaurant id
+    favouriteDishes:[String] //The list of dish id
+
 }, {
     timestamps: true
 });

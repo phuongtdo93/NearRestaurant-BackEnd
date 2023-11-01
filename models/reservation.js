@@ -4,7 +4,7 @@ import Restaurants from "./restaurant.js";
 const ReservationsStatus =  {
     New: "New",
     Confirm: "Confirm",
-    Served: "Served",
+    Served: "Done",
     Cancelled: "Cancelled",
 }
 export {ReservationsStatus};

@@ -10,7 +10,12 @@ const ReservationController = {
             //TODO - Check the current available seat of the restaurant
             const  result = await ReservationService.addReservation(reservation);
             //TODO - Update the restaurant available seat
-            return res.json({success: true, data: result});
+            if (result.modifiedCount > 0) {
+                return res.json({success: true})
+            }
+            else {
+                return res.json({success: false})
+            }
         } catch (error) {
             next(error);
         }
