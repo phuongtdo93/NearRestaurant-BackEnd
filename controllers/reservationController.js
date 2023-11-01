@@ -1,12 +1,15 @@
 import ReservationService from "../services/reservationService.js";
 import {ReservationsStatus} from "../models/reservation.js";
 
+
 const ReservationController = {
     addReservation: async function(req, res, next){
         try {
             let reservation = req.body;
             reservation.status = ReservationsStatus.New
+            //TODO - Check the current available seat of the restaurant
             const  result = await ReservationService.addReservation(reservation);
+            //TODO - Update the restaurant available seat
             return res.json({success: true, data: result});
         } catch (error) {
             next(error);

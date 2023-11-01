@@ -1,0 +1,70 @@
+#Get all categories
+POST {{api_endpoint}}/restaurants/categories/
+Content-Type: application/json
+
+{
+    "name": "France",
+    "restaurants": [
+    ]
+}
+
+###
+#Add a restaurant to a category
+POST {{api_endpoint}}/restaurants/categories/64ad2168cde3b553079129fc/restaurants
+Content-Type: application/json
+
+{
+  "name": "El Paso Tex Mex Bar and Grill",
+  "address": "53 E Broadway Ave, Fairfield, IA 52556",
+  "services": [
+    "WIFI"
+  ,"PARKING"
+  ,"BAR"
+  ,"WALK"
+  ],
+  "isTrending": true,
+  "rate": 5.0,
+  "distance": 6.5,
+  "longDescription": "The regional cuisine of different regions of the Alps is called Alpine cuisine",
+  "shortDescription": "Despite clear regional differences, this cuisine has been characterised throughout the entire Alpine region for centuries by the isolated rural life",
+  "timeOpen": "07:00 - 22: 00",
+  "dayOfWeek": "Monday to Sunday",
+  "image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1689068039307-3004b72c6608image",
+  "dishes": [
+    {
+      "name": "Sandwich",
+      "description": "Montagu's great-great-great-great-great-great grandson, Orlando Montagu, founded a chain called Earl of Sandwich",
+      "rate": 4,
+      "price": 15.9
+    ,"image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688214208977-31253dc508dfimage"
+
+    },
+    {
+      "name": "Waldorf Salad",
+      "description": "Montagu's great-great-great-great-great-great grandson, Orlando Montagu, founded a chain called Earl of Sandwich",
+      "rate": 3,
+      "price": 12.9,
+      "image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688214162400-2fd90334dc87image"
+    }
+  ]
+}
+
+###
+# "image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688213434869-d9e3e4ed414dimage",
+# image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1689068026691-d32ca47ba741image",
+
+###
+#Add a dish to a restaurant
+POST {{api_endpoint}}/restaurants/categories/64a0b33eec6e7df2d85d75f5/restaurants/64a0b33eec6e7df2d85d75f6/dishes
+Content-Type: application/json
+
+{
+  "name": "Waldorf Salad",
+  "description": "Montagu's great-great-great-great-great-great grandson, Orlando Montagu, founded a chain called Earl of Sandwich",
+  "rate": 3,
+  "price": 12.9,
+  "image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688214208977-31253dc508dfimage"
+}
+###
+#"image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688214162400-2fd90334dc87image"
+#"image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688214208977-31253dc508dfimage"

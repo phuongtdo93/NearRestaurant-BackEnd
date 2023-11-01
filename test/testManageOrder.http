@@ -1,0 +1,16 @@
+#Add order
+POST {{api_endpoint}}/orders
+
+###
+#Get order by userId
+GET {{api_endpoint}}/orders/user/64cd8c714fb8033bf9f77059
+
+
+###
+#Update order status
+PATCH {{api_endpoint}}/orders/64d0bd1464d64214138a0b24
+Content-Type: application/json
+
+{
+    "status": "Delivered"
+}

@@ -12,12 +12,14 @@ export {ReservationsStatus};
 const Reservations = mongoose.Schema ({
     id: mongoose.Types.ObjectId,
     userId: String,
-    restaurant: Restaurants,
+    restaurant: {
+        name: String,
+        image: String
+    },
     numberOfPeople: Number,
     date: Date,
-    time: Number,
     status: String
 }, {
     timestamps: true
 })
-export default mongoose.model("Reservations", Reservations);
+export {Reservations};

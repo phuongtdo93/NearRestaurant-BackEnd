@@ -1,0 +1,8 @@
+#Set favourite restaurant
+PATCH {{api_endpoint}}/categories/64a0b33eec6e7df2d85d75f5/restaurants/64a0b33eec6e7df2d85d75f6?isFavourite=true
+
+
+###
+#Set favourite dishes
+PATCH {{api_endpoint}}/categories/64a01af9372d0c7ce7802f5c/restaurants/64a01af9372d0c7ce7802f5d/dishes/64a01af9372d0c7ce7802f5e
+

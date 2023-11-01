@@ -1,0 +1,21 @@
+#Get categories
+GET {{api_endpoint}}/categories?withRestaurant=true
+
+###
+#Get restaurant by category Id
+GET {{api_endpoint}}/categories/64a01af9372d0c7ce7802f5c/restaurants
+
+
+###
+#Get top 5 restaurants
+GET {{api_endpoint}}/categories/restaurants?numOfTop=5
+
+
+###
+#Get all restaurants
+GET {{api_endpoint}}/categories/restaurants?isTrending=true
+
+
+###
+#Get images of a restaurant
+GET {{api_endpoint}}/categories/64a01af9372d0c7ce7802f5c/restaurants/64ad11a7558d90ebd1356c2f/images

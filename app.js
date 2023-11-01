@@ -1,23 +1,32 @@
 import express, {json} from 'express';
 import mongoose from "mongoose";
+import morgan from 'morgan';
 import cors from 'cors';
+import * as dotenv from 'dotenv';
 import CategoryRouter from "./routers/categoryRouter.js";
 import RestaurantRouter from "./routers/restaurantRouter.js";
 import ReservationRouter from "./routers/reservationRouter.js";
 import OrderRouter from "./routers/orderRouter.js";
 import UserRouter from "./routers/userRouter.js";
+import checkToken from "./middleware/checkToken.js";
 const app = express();
 
-await mongoose.connect(`mongodb://localhost:27017/NearRestaurant`);
-// await mongoose.connect(`mongodb+srv://admin:admin@cluster0.flg58zz.mongodb.net/near-restaurant`);
-console.log("DB connected successfully!");
+// app config
+// app.set('x-powered-by', false);
 
 app.use(cors());
+// app.use(morgan('dev'));
 app.use(json());
+dotenv.config();
+
+await mongoose.connect(process.env.DB_CONNECTION);
+console.log("DB connected successfully!");
+
+
 app.use('/categories', CategoryRouter)
-app.use('/restaurants', RestaurantRouter)
-app.use('/reservations', ReservationRouter)
-app.use('/orders', OrderRouter)
+app.use('/restaurants', checkToken.validateToken, RestaurantRouter)
+app.use('/reservations', checkToken.validateToken, ReservationRouter)
+app.use('/orders', checkToken.validateToken, OrderRouter)
 app.use('/users', UserRouter)
 
 // error handlers

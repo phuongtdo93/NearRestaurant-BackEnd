@@ -2,7 +2,7 @@ import {Router} from 'express'
 import RestaurantController from "../controllers/restaurantController.js";
 
 const router = Router();
-router.get("", RestaurantController.getProducts);
-
+router.post("/category", RestaurantController.addCategory);
+router.post("", RestaurantController.addRestaurant);
 
 export default router;
