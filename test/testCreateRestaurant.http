@@ -1,5 +1,5 @@
 #Get all categories
-POST {{api_endpoint}}/restaurants/categories/
+POST {{api_endpoint}}/categories/
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 ###
 #Add a restaurant to a category
-POST {{api_endpoint}}/restaurants/categories/64ad2168cde3b553079129fc/restaurants
+POST {{api_endpoint}}/categories/64ad2168cde3b553079129fc/restaurants
 Content-Type: application/json
 
 {

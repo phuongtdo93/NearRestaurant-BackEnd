@@ -4,9 +4,11 @@ import DishCategoryRouter from "./dishCategoryRouter.js";
 import checkToken from "../middleware/checkToken.js";
 
 const router = Router({mergeParams: true});
+router.post("", checkToken.validateToken, RestaurantController.addRestaurant);
 router.get("", RestaurantController.getRestaurantByCategoryId);
 router.get("/:restaurantId/images", RestaurantController.getRestaurantImages)
 router.patch("/:restaurantId", checkToken.validateToken, RestaurantController.setFavouriteRestaurant);
+
 router.use("/:restaurantId/dishes", DishCategoryRouter);
 
 
