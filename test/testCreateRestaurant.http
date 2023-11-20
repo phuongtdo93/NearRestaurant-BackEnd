@@ -1,6 +1,7 @@
 #Get all categories
 POST {{api_endpoint}}/categories/
 Content-Type: application/json
+Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVhYmVlNDJkYzcxY2JmOTk0M2ZmYTgiLCJlbWFpbCI6InRoYW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIiLCJmYXZvdXJpdGVSZXN0YXVyYW50cyI6W10sImZhdm91cml0ZURpc2hlcyI6W10sInJlc2VydmF0aW9ucyI6W10sImNyZWF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsIl9fdiI6MCwiaWF0IjoxNzAwNDg2MjE2fQ.q-AwUOJUsvcH53tLaLYQO80L0DhoSJ4oYzc80AM1Ka4
 
 {
     "name": "France",
@@ -10,8 +11,9 @@ Content-Type: application/json
 
 ###
 #Add a restaurant to a category
-POST {{api_endpoint}}/categories/64ad2168cde3b553079129fc/restaurants
+POST {{api_endpoint}}/categories/64a01af9372d0c7ce7802f5c/restaurants
 Content-Type: application/json
+Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVhYmVlNDJkYzcxY2JmOTk0M2ZmYTgiLCJlbWFpbCI6InRoYW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIiLCJmYXZvdXJpdGVSZXN0YXVyYW50cyI6W10sImZhdm91cml0ZURpc2hlcyI6W10sInJlc2VydmF0aW9ucyI6W10sImNyZWF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsIl9fdiI6MCwiaWF0IjoxNzAwNDg2MjE2fQ.q-AwUOJUsvcH53tLaLYQO80L0DhoSJ4oYzc80AM1Ka4
 
 {
   "name": "El Paso Tex Mex Bar and Grill",
@@ -30,6 +32,10 @@ Content-Type: application/json
   "timeOpen": "07:00 - 22: 00",
   "dayOfWeek": "Monday to Sunday",
   "image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1689068039307-3004b72c6608image",
+  "imageList": [
+    "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress",
+    "https://images.pexels.com/photos/2102037/pexels-photo-2102037.jpeg?auto=compress"
+  ],
   "dishes": [
     {
       "name": "Sandwich",
@@ -55,8 +61,9 @@ Content-Type: application/json
 
 ###
 #Add a dish to a restaurant
-POST {{api_endpoint}}/restaurants/categories/64a0b33eec6e7df2d85d75f5/restaurants/64a0b33eec6e7df2d85d75f6/dishes
+POST {{api_endpoint}}/categories/64ad211acde3b553079129f1/restaurants/64ad21a3cde3b553079129ff/dishes
 Content-Type: application/json
+Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVhYmVlNDJkYzcxY2JmOTk0M2ZmYTgiLCJlbWFpbCI6InRoYW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIiLCJmYXZvdXJpdGVSZXN0YXVyYW50cyI6W10sImZhdm91cml0ZURpc2hlcyI6W10sInJlc2VydmF0aW9ucyI6W10sImNyZWF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsIl9fdiI6MCwiaWF0IjoxNzAwNDg2MjE2fQ.q-AwUOJUsvcH53tLaLYQO80L0DhoSJ4oYzc80AM1Ka4
 
 {
   "name": "Waldorf Salad",

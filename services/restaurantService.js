@@ -20,7 +20,8 @@ const RestaurantService = {
         );
     },
     getRestaurantById: async function (categoryId, restaurantId) {
-        let result = await Category.find({'_id': categoryId, "restaurants": {$elemMatch: {"_id": restaurantId}}})
+        let result = await Category.findOne({ "_id": categoryId, "restaurants._id": restaurantId },
+            { "restaurants.$": 1 })
         return result
     },
 }

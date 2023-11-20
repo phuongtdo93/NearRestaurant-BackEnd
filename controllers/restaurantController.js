@@ -83,19 +83,22 @@ const RestaurantController = {
     },
     getRestaurantImages: async function(req, res, next) {
         try {
-            // try {
-            //     const {categoryId, restaurantId} = req.params
-            //     const result = await RestaurantService.getRestaurantById(categoryId, restaurantId);
-            //     console.log(result.restaurants);
-            //     return res.json(result);
-            // } catch (error) {
-            //     next(error);
-            // }
-            let result = []
-            for (let i = 0; i < 30; i++) {
-                result.push("https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688213434869-d9e3e4ed414dimage")
+            try {
+
+                const {categoryId, restaurantId} = req.params
+                const result = await RestaurantService.getRestaurantById(categoryId, restaurantId);
+
+                let response = []
+                for (let i = 0; response.length < 30; i++) {
+                    response.push(...result.restaurants[0].imageList)
+                }
+
+                console.log(result.restaurants);
+                return res.json(response);
+            } catch (error) {
+                next(error);
             }
-            return res.json(result);
+
         } catch (err) {
             next(err)
         }

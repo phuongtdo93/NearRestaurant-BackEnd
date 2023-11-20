@@ -18,4 +18,4 @@ GET {{api_endpoint}}/categories/restaurants?isTrending=true
 
 ###
 #Get images of a restaurant
-GET {{api_endpoint}}/categories/64a01af9372d0c7ce7802f5c/restaurants/64ad11a7558d90ebd1356c2f/images
+GET {{api_endpoint}}/categories/64a01af9372d0c7ce7802f5c/restaurants/655b5fa8902f499aca317112/images

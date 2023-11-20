@@ -2,7 +2,7 @@ POST {{api_endpoint}}/users/signup
 Content-Type: application/json
 
 {
-  "email": "thao3@gmail.com",
+  "email": "thao@gmail.com",
   "password": "12345"
 }
 
