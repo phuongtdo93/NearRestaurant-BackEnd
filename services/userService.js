@@ -6,6 +6,9 @@ const UserService = {
     },
     getUser: async function (email, password){
         return await Users.find({email: email, password: password})
+    },
+    getByEmail: async function (email) {
+        return await Users.findOne({email: email})
     }
 }
 

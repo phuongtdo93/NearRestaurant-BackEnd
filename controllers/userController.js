@@ -35,10 +35,11 @@ const UserController = {
             const { password: plain_password } = new_user;
 
             const hashed_password = await bcrypt.hash(plain_password, 10);
-            const existUser = UserService.getUser(new_user.email, hashed_password);
+            const existUser = await UserService.getByEmail(new_user.email);
 
             if (existUser) {
                 next(new Error("User already exists"));
+                return;
             }
 
             const result = await userModel.create({
