@@ -1,23 +1,23 @@
 #Get all categories
 POST {{api_endpoint}}/categories/
 Content-Type: application/json
-Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVhYmVlNDJkYzcxY2JmOTk0M2ZmYTgiLCJlbWFpbCI6InRoYW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIiLCJmYXZvdXJpdGVSZXN0YXVyYW50cyI6W10sImZhdm91cml0ZURpc2hlcyI6W10sInJlc2VydmF0aW9ucyI6W10sImNyZWF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsIl9fdiI6MCwiaWF0IjoxNzAwNDg2MjE2fQ.q-AwUOJUsvcH53tLaLYQO80L0DhoSJ4oYzc80AM1Ka4
+Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTViNjY4ZTU5MDA1MDc5MzliZTBmOTUiLCJlbWFpbCI6InRoYW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIiLCJmYXZvdXJpdGVSZXN0YXVyYW50cyI6W10sImZhdm91cml0ZURpc2hlcyI6W10sInJlc2VydmF0aW9ucyI6W10sImNyZWF0ZWRBdCI6IjIwMjMtMTEtMjBUMTQ6MDA6NDYuNTA1WiIsInVwZGF0ZWRBdCI6IjIwMjMtMTEtMjBUMTQ6MDA6NDYuNTA1WiIsIl9fdiI6MCwiaWF0IjoxNzAwNDg4OTU2fQ.GAhY8WqZlEy0B96KSkh6Q7GtVTYTpDebnkHWR1rN0KY
 
 {
-    "name": "France",
+    "name": "Vietnam",
     "restaurants": [
     ]
 }
 
 ###
 #Add a restaurant to a category
-POST {{api_endpoint}}/categories/64a01af9372d0c7ce7802f5c/restaurants
+POST {{api_endpoint}}/categories/655b67f0a84041916ba87870/restaurants
 Content-Type: application/json
-Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVhYmVlNDJkYzcxY2JmOTk0M2ZmYTgiLCJlbWFpbCI6InRoYW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIiLCJmYXZvdXJpdGVSZXN0YXVyYW50cyI6W10sImZhdm91cml0ZURpc2hlcyI6W10sInJlc2VydmF0aW9ucyI6W10sImNyZWF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsIl9fdiI6MCwiaWF0IjoxNzAwNDg2MjE2fQ.q-AwUOJUsvcH53tLaLYQO80L0DhoSJ4oYzc80AM1Ka4
+Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTViNjY4ZTU5MDA1MDc5MzliZTBmOTUiLCJlbWFpbCI6InRoYW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIiLCJmYXZvdXJpdGVSZXN0YXVyYW50cyI6W10sImZhdm91cml0ZURpc2hlcyI6W10sInJlc2VydmF0aW9ucyI6W10sImNyZWF0ZWRBdCI6IjIwMjMtMTEtMjBUMTQ6MDA6NDYuNTA1WiIsInVwZGF0ZWRBdCI6IjIwMjMtMTEtMjBUMTQ6MDA6NDYuNTA1WiIsIl9fdiI6MCwiaWF0IjoxNzAwNDg4OTU2fQ.GAhY8WqZlEy0B96KSkh6Q7GtVTYTpDebnkHWR1rN0KY
 
 {
-  "name": "El Paso Tex Mex Bar and Grill",
-  "address": "53 E Broadway Ave, Fairfield, IA 52556",
+  "name": "Sandwich Slinger",
+  "address": "1867 Lee Avenue, Lawrence, KS",
   "services": [
     "WIFI"
   ,"PARKING"
@@ -31,26 +31,34 @@ Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVhYmVlNDJ
   "shortDescription": "Despite clear regional differences, this cuisine has been characterised throughout the entire Alpine region for centuries by the isolated rural life",
   "timeOpen": "07:00 - 22: 00",
   "dayOfWeek": "Monday to Sunday",
-  "image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1689068039307-3004b72c6608image",
+  "image": "https://images.pexels.com/photos/3252051/pexels-photo-3252051.jpeg?auto=compress",
   "imageList": [
-    "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress",
-    "https://images.pexels.com/photos/2102037/pexels-photo-2102037.jpeg?auto=compress"
+    "https://images.pexels.com/photos/3252051/pexels-photo-3252051.jpeg?auto=compress",
+    "https://images.pexels.com/photos/5786388/pexels-photo-5786388.jpeg?auto=compress",
+    "https://images.pexels.com/photos/8753546/pexels-photo-8753546.jpeg?auto=compress",
+    "https://images.pexels.com/photos/7195551/pexels-photo-7195551.jpeg?auto=compress",
+    "https://images.pexels.com/photos/14017650/pexels-photo-14017650.jpeg?auto=compress",
+    "https://images.pexels.com/photos/14736914/pexels-photo-14736914.jpeg?auto=compress",
+    "https://images.pexels.com/photos/7582942/pexels-photo-7582942.jpeg?auto=compress",
+    "https://images.pexels.com/photos/1378424/pexels-photo-1378424.jpeg?auto=compress",
+    "https://images.pexels.com/photos/1581554/pexels-photo-1581554.jpeg?auto=compress",
+    "https://images.pexels.com/photos/279768/pexels-photo-279768.jpeg?auto=compress"
   ],
   "dishes": [
     {
-      "name": "Sandwich",
+      "name": "Freshly Squeezed Orange Juice",
       "description": "Montagu's great-great-great-great-great-great grandson, Orlando Montagu, founded a chain called Earl of Sandwich",
       "rate": 4,
       "price": 15.9
-    ,"image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688214208977-31253dc508dfimage"
+    ,"image": "https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg?auto=compress"
 
     },
     {
-      "name": "Waldorf Salad",
+      "name": "Detox Water with Cucumber and Mint",
       "description": "Montagu's great-great-great-great-great-great grandson, Orlando Montagu, founded a chain called Earl of Sandwich",
-      "rate": 3,
-      "price": 12.9,
-      "image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688214162400-2fd90334dc87image"
+      "rate": 5,
+      "price": 20,
+      "image": "https://images.pexels.com/photos/1484678/pexels-photo-1484678.jpeg?auto=compress"
     }
   ]
 }
@@ -63,7 +71,7 @@ Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVhYmVlNDJ
 #Add a dish to a restaurant
 POST {{api_endpoint}}/categories/64ad211acde3b553079129f1/restaurants/64ad21a3cde3b553079129ff/dishes
 Content-Type: application/json
-Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVhYmVlNDJkYzcxY2JmOTk0M2ZmYTgiLCJlbWFpbCI6InRoYW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIiLCJmYXZvdXJpdGVSZXN0YXVyYW50cyI6W10sImZhdm91cml0ZURpc2hlcyI6W10sInJlc2VydmF0aW9ucyI6W10sImNyZWF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTEtMjBUMDI6MDU6MjQuMTEwWiIsIl9fdiI6MCwiaWF0IjoxNzAwNDg2MjE2fQ.q-AwUOJUsvcH53tLaLYQO80L0DhoSJ4oYzc80AM1Ka4
+Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTViNjY4ZTU5MDA1MDc5MzliZTBmOTUiLCJlbWFpbCI6InRoYW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIiLCJmYXZvdXJpdGVSZXN0YXVyYW50cyI6W10sImZhdm91cml0ZURpc2hlcyI6W10sInJlc2VydmF0aW9ucyI6W10sImNyZWF0ZWRBdCI6IjIwMjMtMTEtMjBUMTQ6MDA6NDYuNTA1WiIsInVwZGF0ZWRBdCI6IjIwMjMtMTEtMjBUMTQ6MDA6NDYuNTA1WiIsIl9fdiI6MCwiaWF0IjoxNzAwNDg4OTU2fQ.GAhY8WqZlEy0B96KSkh6Q7GtVTYTpDebnkHWR1rN0KY
 
 {
   "name": "Waldorf Salad",
@@ -73,5 +81,3 @@ Authorization: bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVhYmVlNDJ
   "image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688214208977-31253dc508dfimage"
 }
 ###
-#"image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688214162400-2fd90334dc87image"
-#"image": "https://s3.us-west-2.amazonaws.com/images.unsplash.com/application-1688214208977-31253dc508dfimage"
